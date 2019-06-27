@@ -7,15 +7,11 @@
 html,
 body {
     font-family: 'Lato', sans-serif;
+    background: var(--primary-color);
     height: 100%;
     margin: 0;
     padding: 0;
-    background: var(--primary-color);
-}
-
-.container {
-    width: 100%;
-    height: 100vh;
+    overflow: hidden;
 }
 
 /* header styles */
@@ -27,14 +23,13 @@ body {
 .head-content {
     display: flex;
     justify-content: center;
-    padding: 4px 0 2px 0;
+    padding: 4px 35px 2px 35px;
     font-family: 'Josefin Sans', sans-serif;
-    background: #fff;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    width: 180px;
+    background: #fff;
     color: var(--secondary-color);
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
 }
 
 /* login/registration styles */
@@ -42,8 +37,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 200px auto;
-    width: 100%;
+    margin: 200px 0 0 0;
 }
 
 .form-wrap {
@@ -113,7 +107,7 @@ body {
 
 .form-wrap > div > a:hover {
     border-bottom: 1px solid var(--secondary-color);
-    padding-bottom: 5px;
+    padding: 0 0 5px 0;
 }
 
 /* blog page styles */
@@ -154,7 +148,7 @@ body {
 
 .post {
     background: #f1efef;
-    margin: 10px 20px 20px 20px;
+    margin: 15px 20px 20px 20px;
     border-radius: 10px;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
     padding: 15px;
@@ -174,19 +168,18 @@ body {
     margin: 10px 0 0 0;
 }
 
-/* post modal */
+/* toggle post modal */
 .toggle-post {
-    border: 0;
-    z-index: 10;
     position: fixed;
     right: 25px;
     bottom: 35px;
+    border: 0;
     background: var(--secondary-color);
     color: #fff;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
     font-size: 1.6rem;
-    border-radius: 45%;
-    padding: 16px 21px 16px 21px;
+    border-radius: 50%;
+    padding: 18px 23px 17px 22px;
     cursor: pointer;
 }
 
@@ -205,7 +198,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
     background: rgba(55, 53, 95, 0.5);
 }
 
@@ -220,8 +212,8 @@ body {
     right: 20px;
     top: 0;
     bottom: 0;
-    max-width: 1000px;
-    height: 460px;
+    max-width: 800px;
+    height: 475px;
     border-radius: 12px;
     background: #fff;
     padding: 20px;
@@ -246,13 +238,17 @@ body {
     cursor: pointer;
 }
 
+.close-wrap > button:hover {
+    color: #ee5271;
+}
+
+.close-wrap > button:focus {
+    outline: none;
+}
+
 .close-wrap > button > i {
     color: #f0234c;
     font-size: 1.2rem;
-}
-
-.close-wrap > button:hover {
-    color: #ee5271;
 }
 
 .post-inputs {
@@ -283,32 +279,23 @@ body {
     border: 0;
     border-bottom: 1.4px solid #d1d1d1;
     outline: none;
-    padding: 6px 5px;
+    padding: 6px 10px;
     margin: 0 0 20px 0;
 }
 
 .post-title-input:focus {
-    border-bottom: 1.4px solid var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
 }
 
-/* media queries */
-@media (max-width: 580px) {
-    .main-wrapper {
-        margin: 100px auto;
-    }
+.post-content-input {
+    outline: none;
+    border: 0;
+    border: 1px solid #d1d1d1;
+    padding: 10px;
+}
 
-    .post-list {
-        padding: 10px;
-    }
-
-    .post {
-        margin: 10px 10px 20px 10px;
-    }
-
-    .toggle-post {
-        font-size: 1.4rem;
-        padding: 13px 17px 15px 17px;
-    }
+.post-content-input:focus {
+    border: 1px solid var(--primary-color);
 }
 
 /* error display */
@@ -321,4 +308,39 @@ body {
 
 .error-container > h1 {
     color: #fff;
+    letter-spacing: 0.1rem;
+}
+
+.error-msg {
+    color: #fff;
+    text-align: center;
+    margin: 10px 0 0 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+}
+
+/* media queries */
+@media (max-width: 1366px) {
+    .main-wrapper {
+        margin: 120px 0 0 0;
+    }
+}
+
+@media (max-width: 580px) {
+    .main-wrapper {
+        margin: 100px 0 0 0;
+    }
+
+    .post-list {
+        padding: 10px;
+    }
+
+    .post {
+        margin: 10px 10px 20px 10px;
+    }
+
+    .toggle-post {
+        font-size: 1.4rem;
+        padding: 17px 21px 17px 21px;
+    }
 }
