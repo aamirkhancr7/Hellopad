@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Lato:300,400">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Blogily</title>
+</head>
+
+<body>
+    <div class="blog-wrapper">
+        <%if (currentUser) { %>
+            <div class="blog-head animated slideInDown faster">
+                <div class="blog-head-content">
+                    <h2>Welcome, <%= username %></h2>
+                    <a href="/logout">Logout</a>
+                </div>
+            </div>
+            <div class="post-bg hide">
+                <div class="post-body">
+                    <div class="close-wrap">
+                        <div>New Post</div>
+                        <button class="close-btn"><i class="fas fa-times"></i></button>
+                    </div>
+                    <form id="postForm" action="/blog" method="POST" class="post-inputs">
+                        <input type="text" class="post-title-input" name="posttitle" placeholder="Enter Post title"/>
+                        <input type="hidden" class="user-id" name="userid" value="<%= currentUser %>"/>
+                        <textarea class="post-content-input" name="postcontent" cols="40" rows="10" placeholder="Write Something!!"></textarea>
+                        <button type="submit" class="create-post">Post</button>
+                    </form>
+                </div>
+            </div>
+            <%if (posts.length > 0) { %>
+                <div class="post-list">
+                    <% for(let i=0; i < posts.length; i++) { %>
+                        <div class="post">
+                            <div class="post-title"><%= posts[i].title %></div>
+                            <div class="post-content"><%= posts[i].content %></div>
+                            <div class="post-date"><%= posts[i].date %></div>
+                        </div>
+                    <% } %>
+                </div>
+            <% } %>
+            <button class="toggle-post"><i class="fas fa-edit"></i></button>
+        <% } %>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
