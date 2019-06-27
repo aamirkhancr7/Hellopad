@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -98,7 +97,7 @@ app.post('/blog', function(req, res, next) {
         const date = new Date();
         const day = date.getDate();
         const month = date.toLocaleString('en-us', { month: 'long' });
-        const time = date.toLocaleString('en-us', { hour12: true, hour: 'numeric', minute: 'numeric' });
+        const time = date.toLocaleString('en-us', { timeZone: 'Asia/Kolkata', hour12: true, hour: 'numeric', minute: 'numeric'});
         const dateString = `${day} ${month}, ${time}`;
 
         let postsData = {
