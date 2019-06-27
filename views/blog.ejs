@@ -30,7 +30,7 @@
                         <button class="close-btn"><i class="fas fa-times"></i></button>
                     </div>
                     <form id="postForm" action="/blog" method="POST" class="post-inputs">
-                        <input type="text" class="post-title-input" name="posttitle" placeholder="Enter Post title"/>
+                        <input type="text" class="post-title-input" name="posttitle" placeholder="Title"/>
                         <input type="hidden" class="user-id" name="userid" value="<%= currentUser %>"/>
                         <textarea class="post-content-input" name="postcontent" cols="40" rows="10" placeholder="Write Something!!"></textarea>
                         <button type="submit" class="create-post">Post</button>
