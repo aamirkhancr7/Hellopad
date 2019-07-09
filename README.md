@@ -1,5 +1,6 @@
 # Hello Pad
 A note taking app with authentication and jotting down notes.
+
 View it here: https://hellopad.herokuapp.com/
 
 ### Features
