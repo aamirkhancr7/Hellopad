@@ -332,7 +332,7 @@ body {
 }
 
 .error-container > h1 {
-    color: #fff;
+    color: var(--secondary-color);
     letter-spacing: 0.1rem;
 }
 
