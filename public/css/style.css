@@ -1,13 +1,17 @@
 :root {
     font-size: 100%;
-    --primary-color: #736fc4;
+    --primary-color: #fec107;
     --secondary-color: #3f3d55;
 }
 
 html,
 body {
     font-family: 'Lato', sans-serif;
-    background: var(--primary-color);
+    background: url('../img/hero.png');
+    background-attachment: fixed;
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: contain;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -31,18 +35,27 @@ body {
     border-bottom-right-radius: 45px;
 }
 
+.heading-ctn {
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.15rem;
+    letter-spacing: 0.05em;
+    font-weight: 200;
+    margin: 80px 0 0 11%;
+    color: #3f3d55;
+}
+
 /* login/registration styles */
 .main-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin: 200px 0 0 0;
+    margin: 100px 0 0 10%;
 }
 
 .form-wrap {
     background: #fff;
     padding: 25px 30px;
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+    box-shadow: 15px 5px 20px rgba(0, 0, 0, 0.075), 15px 10px 20px rgba(0, 0, 0, 0.062);
     border-radius: 10px;
     text-align: center;
     width: 450px;
@@ -75,7 +88,7 @@ body {
 .form-style > button {
     color: #fff;
     font-size: 1.03em;
-    background: var(--primary-color);
+    background: var(--secondary-color);
     border: 0;
     margin: 10px 0 20px 0;
     padding: 8px 8px;
@@ -84,7 +97,8 @@ body {
 }
 
 .form-style > button:hover {
-    background: var(--secondary-color);
+    background: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .form-style > button:focus {
@@ -114,7 +128,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #fff;
+    background: var(--secondary-color);
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
@@ -123,34 +137,44 @@ body {
 
 .blog-head-content > h2 {
     font-family: 'Josefin Sans', sans-serif;
-    color: var(--secondary-color);
+    color: #fff;
     margin: 0 0 0 20px;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.05rem;
+    font-weight: 300;
 }
 
 .blog-head-content > a {
-    color: #fff;
     text-decoration: none;
-    background: var(--primary-color);
+    background: #d0cde0;
+    color: #000;
     padding: 8px 15px;
     border-radius: 6px;
     margin: 0 20px 0 0;
 }
 
 .blog-head-content > a:hover {
-    background: var(--secondary-color);
+    background: #dad7eb;
 }
 
 .post-list {
     padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .post {
-    background: #f1efef;
-    margin: 15px 20px 20px 20px;
+    background: #fff;
+    margin: 10px 10px;
     border-radius: 10px;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
     padding: 15px;
+    flex: 0 1 300px;
+    height: fit-content;
+}
+
+.post-content {
+    word-break: break-all;
 }
 
 .post-title {
@@ -176,9 +200,9 @@ body {
     background: var(--secondary-color);
     color: #fff;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     border-radius: 50%;
-    padding: 18px 23px 17px 22px;
+    padding: 15px 23px 16px 22px;
     cursor: pointer;
 }
 
@@ -197,7 +221,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(55, 53, 95, 0.5);
+    /* background: rgba(55, 53, 95, 0.5); */
+    background: #d0cde0;
 }
 
 .hide {
@@ -258,7 +283,7 @@ body {
 .create-post {
     color: #fff;
     font-size: 1.03em;
-    background: var(--primary-color);
+    background: var(--secondary-color);
     border: 0;
     margin: 30px 0 0 0;
     padding: 8px 8px;
@@ -267,7 +292,8 @@ body {
 }
 
 .create-post:hover {
-    background: var(--secondary-color);
+    background: var(--primary-color);
+    color: #000;
 }
 
 .create-post:focus {
@@ -311,27 +337,47 @@ body {
 }
 
 .error-msg {
-    color: #fff;
-    text-align: center;
-    margin: 10px 0 0 0;
+    color: #3f3d55;
+    margin: 10px 0 0 15%;
     font-size: 0.9rem;
     letter-spacing: 0.05rem;
 }
 
 /* media queries */
 @media (max-width: 1366px) {
+    .heading-ctn {
+        margin: 60px 0 0 10%;
+        font-size: 1.05rem;
+    }
+
     .main-wrapper {
-        margin: 120px 0 0 0;
+        margin: 70px 0 0 0;
+    }
+
+    .error-msg {
+        margin: 10px 8%;
     }
 }
 
 @media (max-width: 580px) {
+    .head-content {
+        padding: 4px 30px 2px 30px;
+        font-size: 0.95rem;
+    }
+
     .main-wrapper {
-        margin: 100px 0 0 0;
+        margin: 40px 0 0 0;
+    }
+
+    .heading-ctn {
+        font-size: 1rem;
+        margin: 40px 0 0 10%;
+        color: #3f3d55;
     }
 
     .post-list {
         padding: 10px;
+        display: block;
     }
 
     .post {
@@ -340,6 +386,6 @@ body {
 
     .toggle-post {
         font-size: 1.4rem;
-        padding: 17px 21px 17px 21px;
+        padding: 14px 21px 16px 21px;
     }
 }
